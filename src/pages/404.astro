@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 - System Error | Architectural Portfolio">
+  <div class="flex items-center justify-center min-h-[60vh]">
+    <div class="technical-border corner-marks p-8 bg-white max-w-2xl">
+      <div class="text-center">
+        <!-- Error Code Display -->
+        <div class="technical-border p-4 bg-red-50 mb-6">
+          <div class="text-6xl font-bold text-red-600 font-mono mb-2">404</div>
+          <div class="text-lg font-bold text-gray-900">SYSTEM_ERROR</div>
+        </div>
+
+        <!-- Error Details -->
+        <div class="technical-border p-4 bg-gray-50 mb-6 text-left">
+          <h2 class="font-bold text-gray-900 mb-3">ERROR_REPORT</h2>
+          <div class="font-mono text-sm space-y-1">
+            <div><span class="text-gray-500">STATUS:</span> Resource not found</div>
+            <div><span class="text-gray-500">CODE:</span> HTTP_404</div>
+            <div><span class="text-gray-500">TIMESTAMP:</span> {new Date().toISOString()}</div>
+            <div><span class="text-gray-500">DESCRIPTION:</span> The requested blueprint does not exist in the system</div>
+          </div>
+        </div>
+
+        <!-- Navigation Options -->
+        <div class="technical-border p-4 bg-blue-50">
+          <h3 class="font-bold text-gray-900 mb-3">RECOVERY_OPTIONS</h3>
+          <div class="space-y-2">
+            <a href="/" class="block technical-border p-2 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-mono text-sm">└── Return to main system</span>
+            </a>
+            <a href="/projects" class="block technical-border p-2 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-mono text-sm">└── Browse project blueprints</span>
+            </a>
+            <a href="/blog" class="block technical-border p-2 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-mono text-sm">└── Access black box logs</span>
+            </a>
+            <a href="/status" class="block technical-border p-2 bg-white hover:bg-gray-50 transition-colors">
+              <span class="font-mono text-sm">└── Check system status</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- System Status -->
+        <div class="mt-6 technical-border p-3 bg-gray-100">
+          <div class="text-xs font-mono text-gray-600">
+            SYSTEM_STATUS: Operational | ERROR_HANDLING: Active | SUPPORT: Available
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Project Blueprints | Architectural Portfolio">
+  <!-- Header -->
+  <header class="technical-border corner-marks p-6 bg-white mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">PROJECT_BLUEPRINTS</h1>
+    <div class="text-sm text-gray-600 font-mono info-dense">
+      <div>TOTAL_PROJECTS: 12</div>
+      <div>ACTIVE_DEPLOYMENTS: 8</div>
+      <div>TECHNOLOGIES: Go, PostgreSQL, Docker, Kubernetes</div>
+    </div>
+  </header>
+
+  <!-- Detailed Project Blueprints -->
+  <div class="space-y-8">
+    <!-- API Gateway Project -->
+    <div class="technical-border corner-marks p-6 bg-white">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">API_GATEWAY_v2.0</h2>
+          <div class="text-sm text-gray-600 font-mono">High-performance microservices gateway</div>
+        </div>
+        <div class="flex space-x-2">
+          <span class="text-xs bg-green-100 text-green-800 px-3 py-1 technical-border">PRODUCTION</span>
+          <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 technical-border">SCALABLE</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Architecture Diagram -->
+        <div class="technical-border p-4 bg-gray-50 schematic">
+          <h3 class="font-bold text-gray-900 mb-3">SYSTEM_ARCHITECTURE</h3>
+          <div class="bg-white p-4 technical-border font-mono text-sm">
+            <div class="space-y-2">
+              <div>┌─ Load Balancer (Nginx)</div>
+              <div>├─ API Gateway (Go)</div>
+              <div>│  ├─ Authentication Service</div>
+              <div>│  ├─ Rate Limiting</div>
+              <div>│  └─ Request Routing</div>
+              <div>├─ Microservices Cluster</div>
+              <div>│  ├─ User Service (Go)</div>
+              <div>│  ├─ Order Service (Go)</div>
+              <div>│  └─ Payment Service (Go)</div>
+              <div>└─ PostgreSQL Cluster</div>
+              <div>   ├─ Primary (Write)</div>
+              <div>   └─ Replicas (Read)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="space-y-4">
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">TECHNICAL_SPECS</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div><span class="text-gray-500">LANGUAGE:</span> Go 1.21</div>
+              <div><span class="text-gray-500">DATABASE:</span> PostgreSQL 15</div>
+              <div><span class="text-gray-500">CONTAINER:</span> Docker + Kubernetes</div>
+              <div><span class="text-gray-500">THROUGHPUT:</span> 50k req/sec</div>
+              <div><span class="text-gray-500">LATENCY:</span> &lt;10ms p99</div>
+              <div><span class="text-gray-500">UPTIME:</span> 99.9%</div>
+            </div>
+          </div>
+
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">KEY_FEATURES</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div>✓ JWT Authentication</div>
+              <div>✓ Rate Limiting (Redis)</div>
+              <div>✓ Circuit Breakers</div>
+              <div>✓ Health Monitoring</div>
+              <div>✓ Auto-scaling</div>
+              <div>✓ Graceful Shutdowns</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Pipeline Project -->
+    <div class="technical-border corner-marks p-6 bg-white">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">DATA_PIPELINE_SYSTEM</h2>
+          <div class="text-sm text-gray-600 font-mono">Real-time data processing engine</div>
+        </div>
+        <div class="flex space-x-2">
+          <span class="text-xs bg-blue-100 text-blue-800 px-3 py-1 technical-border">ACTIVE</span>
+          <span class="text-xs bg-purple-100 text-purple-800 px-3 py-1 technical-border">BIG_DATA</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Data Flow Diagram -->
+        <div class="technical-border p-4 bg-gray-50 schematic">
+          <h3 class="font-bold text-gray-900 mb-3">DATA_FLOW</h3>
+          <div class="bg-white p-4 technical-border font-mono text-sm">
+            <div class="space-y-2">
+              <div>┌─ Data Sources</div>
+              <div>│  ├─ API Endpoints</div>
+              <div>│  ├─ File Uploads</div>
+              <div>│  └─ Streaming Data</div>
+              <div>├─ Ingestion Layer (Go)</div>
+              <div>│  ├─ Validation</div>
+              <div>│  ├─ Transformation</div>
+              <div>│  └─ Enrichment</div>
+              <div>├─ Processing Engine</div>
+              <div>│  ├─ Batch Processing</div>
+              <div>│  └─ Stream Processing</div>
+              <div>└─ Storage Layer</div>
+              <div>   ├─ PostgreSQL (Structured)</div>
+              <div>   └─ Object Storage (Raw)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="space-y-4">
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">PERFORMANCE_METRICS</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div><span class="text-gray-500">DATA_VOLUME:</span> 10TB+ daily</div>
+              <div><span class="text-gray-500">PROCESSING:</span> Real-time</div>
+              <div><span class="text-gray-500">LATENCY:</span> &lt;100ms</div>
+              <div><span class="text-gray-500">ACCURACY:</span> 99.99%</div>
+              <div><span class="text-gray-500">WORKERS:</span> Auto-scaling</div>
+              <div><span class="text-gray-500">MONITORING:</span> 24/7</div>
+            </div>
+          </div>
+
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">TECHNOLOGIES</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div>• Go (Goroutines)</div>
+              <div>• PostgreSQL (Partitioning)</div>
+              <div>• Docker Swarm</div>
+              <div>• Redis (Caching)</div>
+              <div>• Prometheus (Metrics)</div>
+              <div>• Grafana (Dashboards)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Monitoring Dashboard Project -->
+    <div class="technical-border corner-marks p-6 bg-white">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">MONITORING_DASHBOARD</h2>
+          <div class="text-sm text-gray-600 font-mono">System observability platform</div>
+        </div>
+        <div class="flex space-x-2">
+          <span class="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 technical-border">BETA</span>
+          <span class="text-xs bg-green-100 text-green-800 px-3 py-1 technical-border">REAL_TIME</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <!-- Metrics Collection -->
+        <div class="technical-border p-4 bg-gray-50">
+          <h3 class="font-bold text-gray-900 mb-3">METRICS_COLLECTION</h3>
+          <div class="font-mono text-xs space-y-1">
+            <div>• System Resources</div>
+            <div>• Application Performance</div>
+            <div>• Database Queries</div>
+            <div>• Network Traffic</div>
+            <div>• Error Rates</div>
+            <div>• User Sessions</div>
+          </div>
+        </div>
+
+        <!-- Alerting System -->
+        <div class="technical-border p-4 bg-gray-50">
+          <h3 class="font-bold text-gray-900 mb-3">ALERTING_SYSTEM</h3>
+          <div class="font-mono text-xs space-y-1">
+            <div>• Threshold Monitoring</div>
+            <div>• Anomaly Detection</div>
+            <div>• Multi-channel Alerts</div>
+            <div>• Escalation Policies</div>
+            <div>• Alert Correlation</div>
+            <div>• Auto-remediation</div>
+          </div>
+        </div>
+
+        <!-- Visualization -->
+        <div class="technical-border p-4 bg-gray-50">
+          <h3 class="font-bold text-gray-900 mb-3">VISUALIZATION</h3>
+          <div class="font-mono text-xs space-y-1">
+            <div>• Real-time Dashboards</div>
+            <div>• Custom Widgets</div>
+            <div>• Historical Trends</div>
+            <div>• Interactive Charts</div>
+            <div>• Export Capabilities</div>
+            <div>• Mobile Responsive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distributed Cache Project -->
+    <div class="technical-border corner-marks p-6 bg-white">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900">DISTRIBUTED_CACHE</h2>
+          <div class="text-sm text-gray-600 font-mono">High-performance caching layer</div>
+        </div>
+        <div class="flex space-x-2">
+          <span class="text-xs bg-green-100 text-green-800 px-3 py-1 technical-border">PRODUCTION</span>
+          <span class="text-xs bg-red-100 text-red-800 px-3 py-1 technical-border">CRITICAL</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Cache Architecture -->
+        <div class="technical-border p-4 bg-gray-50 schematic">
+          <h3 class="font-bold text-gray-900 mb-3">CACHE_ARCHITECTURE</h3>
+          <div class="bg-white p-4 technical-border font-mono text-sm">
+            <div class="space-y-2">
+              <div>┌─ Application Layer</div>
+              <div>├─ Cache Client (Go)</div>
+              <div>│  ├─ Connection Pool</div>
+              <div>│  ├─ Retry Logic</div>
+              <div>│  └─ Fallback Strategy</div>
+              <div>├─ Cache Cluster</div>
+              <div>│  ├─ Redis Nodes</div>
+              <div>│  ├─ Consistent Hashing</div>
+              <div>│  └─ Replication</div>
+              <div>└─ Persistence Layer</div>
+              <div>   └─ PostgreSQL Backup</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Performance Stats -->
+        <div class="space-y-4">
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">PERFORMANCE_STATS</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div><span class="text-gray-500">HIT_RATIO:</span> 95.2%</div>
+              <div><span class="text-gray-500">LATENCY:</span> 0.5ms avg</div>
+              <div><span class="text-gray-500">THROUGHPUT:</span> 100k ops/sec</div>
+              <div><span class="text-gray-500">MEMORY:</span> 32GB cluster</div>
+              <div><span class="text-gray-500">EVICTION:</span> LRU policy</div>
+              <div><span class="text-gray-500">AVAILABILITY:</span> 99.99%</span>
+            </div>
+          </div>
+
+          <div class="technical-border p-4 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-3">CACHE_STRATEGIES</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div>• Write-through</div>
+              <div>• Write-behind</div>
+              <div>• Cache-aside</div>
+              <div>• TTL Management</div>
+              <div>• Bulk Operations</div>
+              <div>• Compression</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

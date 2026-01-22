@@ -1,0 +1,198 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Prathmesh Bhardwaj - Backend/Fullstack Developer Portfolio | JavaScript, Flutter, Express.js" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen scanlines">
+    <div class="flex min-h-screen">
+      <!-- System Navigation Sidebar -->
+      <nav id="sidebar" class="w-64 bg-gray-50 border-r border-gray-400 technical-border corner-marks p-4 fixed h-full overflow-y-auto md:block hidden">
+        <div class="mb-8">
+          <h1 class="text-lg font-bold text-gray-900 mb-2">SYSTEM_NAVIGATION</h1>
+          <div class="text-xs text-gray-600 font-mono">
+            <div>v1.0.0 | STATUS: <span class="text-green-600 status-active">ACTIVE</span></div>
+            <div class="status-flicker">SEEKING: Backend/Fullstack Roles</div>
+          </div>
+        </div>
+        
+        <div class="space-y-4">
+          <div class="technical-border p-3 bg-white">
+            <div class="text-xs text-gray-500 mb-1">├── ROOT</div>
+            <ul class="space-y-1 text-sm font-mono">
+              <li><a href="/" class="text-blue-600 hover:text-blue-800 transition-colors">└── index.main</a></li>
+            </ul>
+          </div>
+          
+          <div class="technical-border p-3 bg-white">
+            <div class="text-xs text-gray-500 mb-1">├── PROJECTS</div>
+            <ul class="space-y-1 text-sm font-mono">
+              <li><a href="/projects" class="text-blue-600 hover:text-blue-800 transition-colors">└── blueprints/</a></li>
+            </ul>
+          </div>
+          
+          <div class="technical-border p-3 bg-white">
+            <div class="text-xs text-gray-500 mb-1">├── LOGS</div>
+            <ul class="space-y-1 text-sm font-mono">
+              <li><a href="/blog" class="text-blue-600 hover:text-blue-800 transition-colors">└── black_box/</a></li>
+            </ul>
+          </div>
+          
+          <div class="technical-border p-3 bg-white">
+            <div class="text-xs text-gray-500 mb-1">├── STATUS</div>
+            <ul class="space-y-1 text-sm font-mono">
+              <li><a href="/status" class="text-blue-600 hover:text-blue-800 transition-colors">└── live_feed/</a></li>
+            </ul>
+          </div>
+
+          <div class="technical-border p-3 bg-white">
+            <div class="text-xs text-gray-500 mb-1">├── DOCS</div>
+            <ul class="space-y-1 text-sm font-mono">
+              <li><a href="/resume.pdf" class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank">└── resume_v1.pdf</a></li>
+              <li><a href="https://github.com/whybepb" class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank">└── github.profile</a></li>
+              <li><a href="mailto:whybepb@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors">└── contact.email</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Terminal Interface -->
+        <div class="mt-8 terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-buttons">
+              <div class="terminal-button close"></div>
+              <div class="terminal-button minimize"></div>
+              <div class="terminal-button maximize"></div>
+            </div>
+            <span class="ml-2 text-white">system.terminal</span>
+          </div>
+          <div class="p-3 bg-black text-green-400 font-mono text-xs">
+            <div id="terminal-output" class="mb-2">
+              <div>$ system --status</div>
+              <div class="text-green-300">All systems operational</div>
+              <div>$ help</div>
+              <div class="text-gray-400">Available commands:</div>
+              <div class="text-gray-400">  contact - Open contact info</div>
+              <div class="text-gray-400">  status  - System status</div>
+              <div class="text-gray-400">  clear   - Clear terminal</div>
+            </div>
+            <div class="flex">
+              <span class="text-blue-400">$</span>
+              <input 
+                id="terminal-input" 
+                type="text" 
+                class="bg-transparent border-none outline-none text-green-400 ml-1 flex-1"
+                placeholder="Type 'help' for commands..."
+              />
+            </div>
+          </div>
+        </div>
+        
+        <!-- System Info -->
+        <div class="mt-4 technical-border p-3 bg-gray-100">
+          <div class="text-xs text-gray-600 font-mono">
+            <div>LANG: JavaScript, Flutter, Express</div>
+            <div>MODE: Learning & Building</div>
+            <div class="status-flicker">STATUS: Job Seeking</div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 technical-border p-2 bg-white">
+        <div class="text-xs font-mono">MENU.SYS</div>
+      </button>
+      
+      <!-- Main Content Area -->
+      <main class="flex-1 md:ml-64 p-4 md:p-8">
+        <slot />
+      </main>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <script>
+      // Terminal functionality
+      const terminalInput = document.getElementById('terminal-input');
+      const terminalOutput = document.getElementById('terminal-output');
+      
+      if (terminalInput && terminalOutput) {
+        terminalInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            const command = this.value.trim().toLowerCase();
+            const outputDiv = document.createElement('div');
+            outputDiv.innerHTML = `<div class="text-blue-400">$ ${this.value}</div>`;
+            
+            switch(command) {
+              case 'help':
+                outputDiv.innerHTML += `
+                  <div class="text-gray-400">Available commands:</div>
+                  <div class="text-gray-400">  contact - Open contact info</div>
+                  <div class="text-gray-400">  status  - System status</div>
+                  <div class="text-gray-400">  clear   - Clear terminal</div>
+                `;
+                break;
+              case 'contact':
+                outputDiv.innerHTML += `<div class="text-green-300">Opening contact interface...</div>`;
+                setTimeout(() => {
+                  window.location.href = 'mailto:whybepb@gmail.com';
+                }, 1000);
+                break;
+              case 'status':
+                outputDiv.innerHTML += `
+                  <div class="text-green-300">System Status: SEEKING OPPORTUNITIES</div>
+                  <div class="text-green-300">Location: Bangalore, India</div>
+                  <div class="text-green-300">Focus: Backend/Fullstack Development</div>
+                  <div class="text-green-300">Experience: Startup (Rbuy), Notification Systems</div>
+                `;
+                break;
+              case 'clear':
+                terminalOutput.innerHTML = '';
+                this.value = '';
+                return;
+              default:
+                outputDiv.innerHTML += `<div class="text-red-400">Command not found: ${command}</div>`;
+            }
+            
+            terminalOutput.appendChild(outputDiv);
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            this.value = '';
+          }
+        });
+      }
+
+      // Mobile menu functionality
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const sidebar = document.getElementById('sidebar');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      
+      if (mobileMenuBtn && sidebar && mobileOverlay) {
+        mobileMenuBtn.addEventListener('click', function() {
+          sidebar.classList.toggle('hidden');
+          mobileOverlay.classList.toggle('hidden');
+        });
+        
+        mobileOverlay.addEventListener('click', function() {
+          sidebar.classList.add('hidden');
+          mobileOverlay.classList.add('hidden');
+        });
+      }
+    </script>
+  </body>
+</html>

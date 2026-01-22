@@ -1,17 +1,474 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Prathmesh Bhardwaj | Backend Developer Portfolio">
+  <!-- Header Section -->
+  <header class="technical-border corner-marks p-6 bg-white mb-8">
+    <div class="flex justify-between items-start">
+      <div>
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">
+          <span class="typing-animation">PRATHMESH_BHARDWAJ.exe</span>
+        </h1>
+        <div class="text-sm text-gray-600 font-mono info-dense">
+          <div>VERSION: 1.0.0</div>
+          <div>SPECIALIZATION: Backend | Fullstack | JavaScript</div>
+          <div>STATUS: <span class="text-green-600 status-active">Seeking opportunities</span></div>
+        </div>
+      </div>
+      <div class="technical-border p-4 bg-gray-50 system-monitor">
+        <div class="text-xs text-gray-500 mb-2">CURRENT_LOCATION</div>
+        <div class="font-mono text-sm">Bangalore, India</div>
+        <div class="text-xs text-green-600 mt-2 status-flicker">● AVAILABLE</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- System Performance Monitor -->
+  <section class="mb-8">
+    <div class="technical-border corner-marks p-4 bg-black text-green-400 font-mono text-sm system-monitor">
+      <div class="mb-2">SYSTEM PERFORMANCE MONITOR v2.1.0</div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div>CPU: <span class="text-blue-400">23%</span></div>
+        <div>RAM: <span class="text-blue-400">45%</span></div>
+        <div>LOAD: <span class="text-green-400">0.8</span></div>
+        <div>UPTIME: <span class="text-green-400">99.98%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Blueprints Section -->
+  <section class="mb-12">
+    <div class="technical-border corner-marks p-6 bg-white">
+      <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="mr-3">📐</span>
+        PROJECT_BLUEPRINTS
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Project Card 1 -->
+        <div class="project-card technical-border p-4 bg-gray-50 schematic project-expandable" data-project="api-gateway">
+          <div class="bg-white p-4 technical-border">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-bold text-gray-900">API_GATEWAY_v2</h3>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 technical-border status-flicker">DEPLOYED</span>
+            </div>
+            
+            <!-- Mini Architecture Diagram -->
+            <div class="mb-4">
+              <svg width="100%" height="80" viewBox="0 0 200 80" class="border border-gray-300">
+                <defs>
+                  <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+                  </pattern>
+                </defs>
+                <rect width="200" height="80" fill="url(#grid)"/>
+                
+                <!-- Load Balancer -->
+                <rect x="10" y="10" width="30" height="15" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="25" y="20" text-anchor="middle" font-size="6" fill="#374151">LB</text>
+                
+                <!-- API Gateway -->
+                <rect x="60" y="10" width="30" height="15" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="75" y="20" text-anchor="middle" font-size="6" fill="#374151">API</text>
+                
+                <!-- Services -->
+                <rect x="120" y="5" width="25" height="12" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="132" y="13" text-anchor="middle" font-size="5" fill="#374151">USER</text>
+                
+                <rect x="120" y="25" width="25" height="12" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="132" y="33" text-anchor="middle" font-size="5" fill="#374151">ORDER</text>
+                
+                <rect x="120" y="45" width="25" height="12" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="132" y="53" text-anchor="middle" font-size="5" fill="#374151">PAY</text>
+                
+                <!-- Database -->
+                <rect x="160" y="20" width="30" height="20" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="175" y="32" text-anchor="middle" font-size="6" fill="#374151">DB</text>
+                
+                <!-- Connection lines -->
+                <line x1="40" y1="17" x2="60" y2="17" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="90" y1="17" x2="120" y2="11" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="90" y1="17" x2="120" y2="31" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="90" y1="17" x2="120" y2="51" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="145" y1="30" x2="160" y2="30" stroke="#3b82f6" stroke-width="1"/>
+              </svg>
+            </div>
+            
+            <div class="text-sm text-gray-600 font-mono info-dense mb-4">
+              <div>├── Go microservices architecture</div>
+              <div>├── PostgreSQL with connection pooling</div>
+              <div>├── Docker containerization</div>
+              <div>└── 99.9% uptime achieved</div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>COMPLEXITY: HIGH</span>
+              <span>DURATION: 3 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card technical-border p-4 bg-gray-50 schematic project-expandable" data-project="data-pipeline">
+          <div class="bg-white p-4 technical-border">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-bold text-gray-900">DATA_PIPELINE_SYSTEM</h3>
+              <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 technical-border status-active">ACTIVE</span>
+            </div>
+            
+            <!-- Mini Data Flow Diagram -->
+            <div class="mb-4">
+              <svg width="100%" height="80" viewBox="0 0 200 80" class="border border-gray-300">
+                <rect width="200" height="80" fill="url(#grid)"/>
+                
+                <!-- Data Sources -->
+                <circle cx="20" cy="20" r="8" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="20" y="24" text-anchor="middle" font-size="5" fill="#374151">API</text>
+                
+                <circle cx="20" cy="40" r="8" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="20" y="44" text-anchor="middle" font-size="5" fill="#374151">FILE</text>
+                
+                <circle cx="20" cy="60" r="8" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="20" y="64" text-anchor="middle" font-size="5" fill="#374151">STREAM</text>
+                
+                <!-- Processing -->
+                <rect x="60" y="25" width="40" height="30" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="80" y="42" text-anchor="middle" font-size="6" fill="#374151">PROCESS</text>
+                
+                <!-- Storage -->
+                <rect x="140" y="15" width="30" height="20" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="155" y="27" text-anchor="middle" font-size="5" fill="#374151">PSQL</text>
+                
+                <rect x="140" y="45" width="30" height="20" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="155" y="57" text-anchor="middle" font-size="5" fill="#374151">S3</text>
+                
+                <!-- Flow lines -->
+                <line x1="28" y1="20" x2="60" y2="35" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="28" y1="40" x2="60" y2="40" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="28" y1="60" x2="60" y2="45" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="100" y1="35" x2="140" y2="25" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="100" y1="45" x2="140" y2="55" stroke="#3b82f6" stroke-width="1"/>
+              </svg>
+            </div>
+            
+            <div class="text-sm text-gray-600 font-mono info-dense mb-4">
+              <div>├── Real-time data processing</div>
+              <div>├── PostgreSQL optimization</div>
+              <div>├── Docker Swarm orchestration</div>
+              <div>└── 10TB+ data processed daily</div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>COMPLEXITY: CRITICAL</span>
+              <span>DURATION: 6 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card technical-border p-4 bg-gray-50 schematic project-expandable" data-project="monitoring">
+          <div class="bg-white p-4 technical-border">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-bold text-gray-900">MONITORING_DASHBOARD</h3>
+              <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 technical-border">BETA</span>
+            </div>
+            
+            <!-- Mini Monitoring Diagram -->
+            <div class="mb-4">
+              <svg width="100%" height="80" viewBox="0 0 200 80" class="border border-gray-300">
+                <rect width="200" height="80" fill="url(#grid)"/>
+                
+                <!-- Metrics Collection -->
+                <rect x="10" y="10" width="25" height="60" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="22" y="42" text-anchor="middle" font-size="5" fill="#374151">METRICS</text>
+                
+                <!-- Processing -->
+                <rect x="50" y="25" width="30" height="30" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="65" y="42" text-anchor="middle" font-size="5" fill="#374151">PROCESS</text>
+                
+                <!-- Dashboard -->
+                <rect x="100" y="15" width="40" height="50" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="120" y="42" text-anchor="middle" font-size="5" fill="#374151">DASHBOARD</text>
+                
+                <!-- Alerts -->
+                <rect x="160" y="25" width="25" height="30" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="172" y="42" text-anchor="middle" font-size="5" fill="#374151">ALERT</text>
+                
+                <!-- Connections -->
+                <line x1="35" y1="40" x2="50" y2="40" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="80" y1="40" x2="100" y2="40" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="140" y1="40" x2="160" y2="40" stroke="#3b82f6" stroke-width="1"/>
+              </svg>
+            </div>
+            
+            <div class="text-sm text-gray-600 font-mono info-dense mb-4">
+              <div>├── Go-based metrics collection</div>
+              <div>├── PostgreSQL analytics engine</div>
+              <div>├── Docker deployment pipeline</div>
+              <div>└── Real-time system monitoring</div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>COMPLEXITY: MEDIUM</span>
+              <span>DURATION: 2 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card technical-border p-4 bg-gray-50 schematic project-expandable" data-project="cache">
+          <div class="bg-white p-4 technical-border">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="font-bold text-gray-900">DISTRIBUTED_CACHE</h3>
+              <span class="text-xs bg-green-100 text-green-800 px-2 py-1 technical-border status-flicker">PRODUCTION</span>
+            </div>
+            
+            <!-- Mini Cache Diagram -->
+            <div class="mb-4">
+              <svg width="100%" height="80" viewBox="0 0 200 80" class="border border-gray-300">
+                <rect width="200" height="80" fill="url(#grid)"/>
+                
+                <!-- Application -->
+                <rect x="10" y="30" width="30" height="20" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="25" y="42" text-anchor="middle" font-size="5" fill="#374151">APP</text>
+                
+                <!-- Cache Cluster -->
+                <rect x="70" y="10" width="20" height="15" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="80" y="19" text-anchor="middle" font-size="4" fill="#374151">C1</text>
+                
+                <rect x="70" y="32" width="20" height="15" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="80" y="41" text-anchor="middle" font-size="4" fill="#374151">C2</text>
+                
+                <rect x="70" y="54" width="20" height="15" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="80" y="63" text-anchor="middle" font-size="4" fill="#374151">C3</text>
+                
+                <!-- Database -->
+                <rect x="130" y="30" width="30" height="20" fill="none" stroke="#3b82f6" stroke-width="1"/>
+                <text x="145" y="42" text-anchor="middle" font-size="5" fill="#374151">DB</text>
+                
+                <!-- Connections -->
+                <line x1="40" y1="40" x2="70" y2="17" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="40" y1="40" x2="70" y2="39" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="40" y1="40" x2="70" y2="61" stroke="#3b82f6" stroke-width="1"/>
+                <line x1="90" y1="39" x2="130" y2="40" stroke="#3b82f6" stroke-width="1"/>
+              </svg>
+            </div>
+            
+            <div class="text-sm text-gray-600 font-mono info-dense mb-4">
+              <div>├── Go concurrent processing</div>
+              <div>├── PostgreSQL session storage</div>
+              <div>├── Multi-container architecture</div>
+              <div>└── 50ms average response time</div>
+            </div>
+            <div class="flex justify-between text-xs text-gray-500">
+              <span>COMPLEXITY: HIGH</span>
+              <span>DURATION: 4 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Black Box Blog Preview -->
+  <section class="mb-12">
+    <div class="technical-border corner-marks p-6 bg-white">
+      <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="mr-3">📋</span>
+        BLACK_BOX_LOGS
+      </h2>
+      
+      <div class="space-y-4">
+        <div class="technical-border p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-gray-900">LOG_001: Optimizing PostgreSQL for High Concurrency</h3>
+            <span class="text-xs text-gray-500 font-mono">[2024.01.15 14:32:18]</span>
+          </div>
+          <div class="text-sm text-gray-600 font-mono info-dense">
+            [INFO] Deep dive into connection pooling, query optimization, and index strategies for handling 10k+ concurrent connections...
+          </div>
+        </div>
+
+        <div class="technical-border p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-gray-900">LOG_002: Docker Multi-Stage Builds for Go Applications</h3>
+            <span class="text-xs text-gray-500 font-mono">[2024.01.10 09:15:42]</span>
+          </div>
+          <div class="text-sm text-gray-600 font-mono info-dense">
+            [OPTIMIZE] Reducing container size by 80% while maintaining security and performance standards...
+          </div>
+        </div>
+
+        <div class="technical-border p-4 bg-gray-50 hover:bg-gray-100 cursor-pointer transition-colors">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="font-bold text-gray-900">LOG_003: Implementing Circuit Breakers in Go Microservices</h3>
+            <span class="text-xs text-gray-500 font-mono">[2024.01.05 16:28:33]</span>
+          </div>
+          <div class="text-sm text-gray-600 font-mono info-dense">
+            [RESILIENCE] Building resilient systems that gracefully handle service failures and cascading errors...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Tech Stack Status -->
+  <section>
+    <div class="technical-border corner-marks p-6 bg-white">
+      <h2 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
+        <span class="mr-3">📊</span>
+        LIVE_TECH_STACK_STATUS
+      </h2>
+      
+      <div class="space-y-6">
+        <!-- JavaScript Proficiency -->
+        <div class="technical-border p-4 bg-gray-50">
+          <div class="flex justify-between items-center mb-2">
+            <span class="font-bold text-gray-900">JavaScript (Node.js)</span>
+            <span class="text-sm font-mono text-gray-600">MASTERY: 85%</span>
+          </div>
+          <div class="progress-bar h-4 technical-border mb-2">
+            <div class="h-full bg-yellow-500 transition-all duration-2000 ease-out" style="width: 85%;"></div>
+          </div>
+          <div class="text-xs text-gray-500 font-mono">
+            Express.js • REST APIs • Async Programming • NPM Ecosystem
+          </div>
+        </div>
+
+        <!-- Flutter/Fullstack Proficiency -->
+        <div class="technical-border p-4 bg-gray-50">
+          <div class="flex justify-between items-center mb-2">
+            <span class="font-bold text-gray-900">Flutter & Fullstack</span>
+            <span class="text-sm font-mono text-gray-600">MASTERY: 78%</span>
+          </div>
+          <div class="progress-bar h-4 technical-border mb-2">
+            <div class="h-full bg-blue-500 transition-all duration-2000 ease-out" style="width: 78%;"></div>
+          </div>
+          <div class="text-xs text-gray-500 font-mono">
+            Mobile Development • Cross-platform • UI/UX • State Management
+          </div>
+        </div>
+
+        <!-- Backend Systems Proficiency -->
+        <div class="technical-border p-4 bg-gray-50">
+          <div class="flex justify-between items-center mb-2">
+            <span class="font-bold text-gray-900">Backend Systems</span>
+            <span class="text-sm font-mono text-gray-600">MASTERY: 82%</span>
+          </div>
+          <div class="progress-bar h-4 technical-border mb-2">
+            <div class="h-full bg-green-500 transition-all duration-2000 ease-out" style="width: 82%;"></div>
+          </div>
+          <div class="text-xs text-gray-500 font-mono">
+            Notification Systems • Database Design • API Architecture • System Integration
+          </div>
+        </div>
+      </div>
+
+      <!-- System Status Footer -->
+      <div class="mt-6 technical-border p-3 bg-gray-100">
+        <div class="flex justify-between text-xs font-mono text-gray-600">
+          <span>LAST_UPDATE: 2024.01.22 14:30:00 UTC</span>
+          <span>NEXT_SYNC: AUTO</span>
+          <span class="status-flicker">STATUS: OPERATIONAL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Expansion Modal -->
+  <div id="project-overlay" class="project-overlay">
+    <div id="project-modal" class="project-expandable">
+      <div class="terminal-window h-full">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <div class="terminal-button close" id="close-modal"></div>
+            <div class="terminal-button minimize"></div>
+            <div class="terminal-button maximize"></div>
+          </div>
+          <span class="ml-2 text-white" id="modal-title">project_details.sys</span>
+        </div>
+        <div class="p-6 bg-white h-full overflow-y-auto" id="modal-content">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Project expansion functionality
+    const projectCards = document.querySelectorAll('.project-expandable');
+    const overlay = document.getElementById('project-overlay');
+    const modal = document.getElementById('project-modal');
+    const modalContent = document.getElementById('modal-content');
+    const modalTitle = document.getElementById('modal-title');
+    const closeBtn = document.getElementById('close-modal');
+
+    const projectDetails = {
+      'api-gateway': {
+        title: 'API_GATEWAY_v2.0',
+        content: `
+          <h2 class="text-2xl font-bold mb-4">API Gateway v2.0 - Technical Specifications</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="technical-border p-4">
+              <h3 class="font-bold mb-3">Architecture Overview</h3>
+              <div class="font-mono text-sm space-y-1">
+                <div>• Load Balancer: Nginx with SSL termination</div>
+                <div>• API Gateway: Go 1.21 with Gin framework</div>
+                <div>• Authentication: JWT with Redis session store</div>
+                <div>• Rate Limiting: Token bucket algorithm</div>
+                <div>• Circuit Breaker: Hystrix pattern implementation</div>
+              </div>
+            </div>
+            <div class="technical-border p-4">
+              <h3 class="font-bold mb-3">Performance Metrics</h3>
+              <div class="font-mono text-sm space-y-1">
+                <div>• Throughput: 50,000 req/sec</div>
+                <div>• Latency P99: <10ms</div>
+                <div>• Uptime: 99.9%</div>
+                <div>• Error Rate: <0.01%</div>
+                <div>• Memory Usage: 512MB average</div>
+              </div>
+            </div>
+          </div>
+        `
+      },
+      'data-pipeline': {
+        title: 'DATA_PIPELINE_SYSTEM',
+        content: `
+          <h2 class="text-2xl font-bold mb-4">Data Pipeline System - Technical Specifications</h2>
+          <div class="technical-border p-4 mb-4">
+            <h3 class="font-bold mb-3">Data Flow Architecture</h3>
+            <div class="font-mono text-sm space-y-1">
+              <div>• Ingestion: Apache Kafka + Go consumers</div>
+              <div>• Processing: Stream processing with Go routines</div>
+              <div>• Transformation: ETL pipelines with validation</div>
+              <div>• Storage: PostgreSQL with partitioning</div>
+              <div>• Monitoring: Prometheus + Grafana dashboards</div>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    projectCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const projectId = this.dataset.project;
+        const project = projectDetails[projectId];
+        
+        if (project) {
+          modalTitle.textContent = project.title;
+          modalContent.innerHTML = project.content;
+          overlay.classList.add('active');
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', function() {
+      overlay.classList.remove('active');
+    });
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+      }
+    });
+  </script>
+</Layout>

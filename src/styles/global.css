@@ -1,0 +1,311 @@
+@import 'tailwindcss';
+
+/* Custom CSS Variables for Architectural Theme */
+:root {
+  --grid-color: #e5e7eb;
+  --grid-size: 20px;
+  --border-technical: #374151;
+  --bg-drafting-light: #fafafa;
+  --bg-drafting-dark: #1e293b;
+  --text-technical: #111827;
+  --text-technical-light: #6b7280;
+  --accent-blueprint: #3b82f6;
+}
+
+/* Drafting Paper Background */
+body {
+  background-color: var(--bg-drafting-light);
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  color: var(--text-technical);
+}
+
+/* Technical Border Styles */
+.technical-border {
+  border: 1px solid var(--border-technical);
+  position: relative;
+}
+
+.technical-border::before,
+.technical-border::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--border-technical);
+}
+
+.technical-border::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.technical-border::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Corner marks for all technical borders */
+.corner-marks::before,
+.corner-marks::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--border-technical);
+}
+
+.corner-marks::before {
+  top: -1px;
+  right: -1px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-marks::after {
+  bottom: -1px;
+  left: -1px;
+  border-right: none;
+  border-top: none;
+}
+
+/* High-density information styling */
+.info-dense {
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  background: transparent;
+  border: 1px solid var(--border-technical);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--progress, 0%);
+  background: var(--accent-blueprint);
+  transition: width 2s ease-out;
+}
+
+/* Schematic diagram styling */
+.schematic {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    var(--grid-color) 2px,
+    var(--grid-color) 4px
+  );
+  transition: all 0.3s ease;
+}
+
+.schematic:hover {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    var(--accent-blueprint) 2px,
+    var(--accent-blueprint) 4px
+  );
+}
+
+/* Terminal typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent-blueprint); }
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid var(--accent-blueprint);
+  white-space: nowrap;
+  animation: typing 2s steps(20, end), blink-caret 1s step-end infinite;
+}
+
+/* Status indicator animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.9; }
+}
+
+.status-active {
+  animation: pulse 2s infinite;
+}
+
+.status-flicker {
+  animation: flicker 3s infinite;
+}
+
+/* Scanline overlay */
+.scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 0, 0.03) 2px,
+    rgba(0, 255, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover connection lines */
+.project-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.project-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 20px;
+  height: 2px;
+  background: var(--accent-blueprint);
+  animation: connect-line 0.5s ease-out;
+}
+
+@keyframes connect-line {
+  from { width: 0; }
+  to { width: 20px; }
+}
+
+/* System monitor styling */
+.system-monitor {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid var(--accent-blueprint);
+  position: relative;
+}
+
+.system-monitor::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--accent-blueprint);
+  animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Terminal window styling */
+.terminal-window {
+  background: #0a0a0a;
+  border: 1px solid var(--border-technical);
+  border-radius: 4px;
+  position: relative;
+}
+
+.terminal-header {
+  background: var(--border-technical);
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 10px;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.terminal-button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.terminal-button.close { background: #ff5f56; }
+.terminal-button.minimize { background: #ffbd2e; }
+.terminal-button.maximize { background: #27ca3f; }
+
+/* Expandable project cards */
+.project-expandable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-expandable.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 800px;
+  height: 80vh;
+  z-index: 1000;
+  background: white;
+  overflow-y: auto;
+}
+
+.project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-overlay.active {
+  opacity: 1;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .typing-animation {
+    animation: none;
+    border-right: none;
+    white-space: normal;
+  }
+  
+  .scanlines::before {
+    display: none;
+  }
+}
