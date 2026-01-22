@@ -50,12 +50,12 @@ import Layout from '../layouts/Layout.astro';
             
             <h3 class="text-lg font-bold mb-4">CONNECTION_POOLING_STRATEGY</h3>
             <div class="technical-border p-3 bg-gray-100 mb-4">
-              <pre class="text-xs">{`# PgBouncer Configuration
+              <pre class="text-xs"># PgBouncer Configuration
 pool_mode = transaction
 max_client_conn = 10000
 default_pool_size = 100
 server_lifetime = 3600
-server_idle_timeout = 600`}</pre>
+server_idle_timeout = 600</pre>
             </div>
             
             <h3 class="text-lg font-bold mb-4">QUERY_OPTIMIZATION_TECHNIQUES</h3>
@@ -114,7 +114,7 @@ server_idle_timeout = 600`}</pre>
             
             <h3 class="text-lg font-bold mb-4">DOCKERFILE_IMPLEMENTATION</h3>
             <div class="technical-border p-3 bg-gray-100 mb-4">
-              <pre class="text-xs">{`# Build stage
+              <pre class="text-xs"># Build stage
 FROM golang:1.21-alpine AS builder
 WORKDIR /app
 COPY go.mod go.sum ./
@@ -126,7 +126,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o main .
 FROM gcr.io/distroless/static-debian11
 COPY --from=builder /app/main /
 EXPOSE 8080
-ENTRYPOINT ["/main"]`}</pre>
+ENTRYPOINT ["/main"]</pre>
             </div>
             
             <h3 class="text-lg font-bold mb-4">SECURITY_ENHANCEMENTS</h3>
@@ -185,7 +185,7 @@ ENTRYPOINT ["/main"]`}</pre>
             
             <h3 class="text-lg font-bold mb-4">GO_IMPLEMENTATION</h3>
             <div class="technical-border p-3 bg-gray-100 mb-4">
-              <pre class="text-xs">{`type CircuitBreaker struct {
+              <pre class="text-xs">type CircuitBreaker struct {
     maxFailures int
     timeout     time.Duration
     failures    int
@@ -214,7 +214,7 @@ func (cb *CircuitBreaker) Call(fn func() error) error {
     
     cb.recordSuccess()
     return nil
-}`}</pre>
+}</pre>
             </div>
             
             <h3 class="text-lg font-bold mb-4">MONITORING_METRICS</h3>
@@ -273,7 +273,7 @@ func (cb *CircuitBreaker) Call(fn func() error) error {
             
             <h3 class="text-lg font-bold mb-4">HPA_CONFIGURATION</h3>
             <div class="technical-border p-3 bg-gray-100 mb-4">
-              <pre class="text-xs">{`apiVersion: autoscaling/v2
+              <pre class="text-xs">apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: api-gateway-hpa
@@ -296,7 +296,7 @@ spec:
       name: memory
       target:
         type: Utilization
-        averageUtilization: 80`}</pre>
+        averageUtilization: 80</pre>
             </div>
             
             <h3 class="text-lg font-bold mb-4">COST_OPTIMIZATION</h3>

@@ -12,8 +12,9 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Prathmesh Bhardwaj - Backend/Fullstack Developer Portfolio | JavaScript, Flutter, Express.js" />
+    <meta name="description" content="Prathmesh Bhardwaj - Backend/Fullstack Developer Portfolio | JavaScript, Flutter, Express.js | Building scalable systems" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,112 +24,217 @@ const { title } = Astro.props;
   <body class="min-h-screen scanlines">
     <div class="flex min-h-screen">
       <!-- System Navigation Sidebar -->
-      <nav id="sidebar" class="w-64 bg-gray-50 border-r border-gray-400 technical-border corner-marks p-4 fixed h-full overflow-y-auto md:block hidden">
-        <div class="mb-8">
-          <h1 class="text-lg font-bold text-gray-900 mb-2">SYSTEM_NAVIGATION</h1>
-          <div class="text-xs text-gray-600 font-mono">
-            <div>v1.0.0 | STATUS: <span class="text-green-600 status-active">ACTIVE</span></div>
-            <div class="status-flicker">SEEKING: Backend/Fullstack Roles</div>
+      <nav id="sidebar" class="w-72 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 border-r border-cyan-500/30 p-4 fixed h-full overflow-y-auto md:block hidden z-40">
+        <!-- Header -->
+        <div class="mb-6 pb-4 border-b border-cyan-500/20">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-3 h-3 bg-cyan-400 rounded-full status-active"></div>
+            <h1 class="text-lg font-bold text-white">SYSTEM_NAV</h1>
+          </div>
+          <div class="text-xs text-gray-400 font-mono space-y-1">
+            <div class="flex justify-between">
+              <span>VERSION:</span>
+              <span class="text-cyan-400">2.0.0</span>
+            </div>
+            <div class="flex justify-between">
+              <span>STATUS:</span>
+              <span class="text-green-400 status-active">ACTIVE</span>
+            </div>
+            <div class="text-purple-400 status-flicker text-center mt-2 py-1 border border-purple-500/30 rounded">
+              SEEKING: Backend/Fullstack Roles
+            </div>
           </div>
         </div>
         
-        <div class="space-y-4">
-          <div class="technical-border p-3 bg-white">
-            <div class="text-xs text-gray-500 mb-1">├── ROOT</div>
+        <!-- Navigation Links -->
+        <div class="space-y-3">
+          <div class="p-3 bg-black/40 rounded border border-gray-700 hover:border-cyan-500/50 transition-all duration-300">
+            <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
+              ROOT
+            </div>
             <ul class="space-y-1 text-sm font-mono">
-              <li><a href="/" class="text-blue-600 hover:text-blue-800 transition-colors">└── index.main</a></li>
+              <li>
+                <a href="/" class="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-cyan-500/10">
+                  <span class="text-gray-500">└──</span> index.main
+                </a>
+              </li>
             </ul>
           </div>
           
-          <div class="technical-border p-3 bg-white">
-            <div class="text-xs text-gray-500 mb-1">├── PROJECTS</div>
+          <div class="p-3 bg-black/40 rounded border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+            <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+              PROJECTS
+            </div>
             <ul class="space-y-1 text-sm font-mono">
-              <li><a href="/projects" class="text-blue-600 hover:text-blue-800 transition-colors">└── blueprints/</a></li>
+              <li>
+                <a href="/projects" class="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-purple-500/10">
+                  <span class="text-gray-500">└──</span> blueprints/
+                </a>
+              </li>
             </ul>
           </div>
           
-          <div class="technical-border p-3 bg-white">
-            <div class="text-xs text-gray-500 mb-1">├── LOGS</div>
+          <div class="p-3 bg-black/40 rounded border border-gray-700 hover:border-green-500/50 transition-all duration-300">
+            <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+              LOGS
+            </div>
             <ul class="space-y-1 text-sm font-mono">
-              <li><a href="/blog" class="text-blue-600 hover:text-blue-800 transition-colors">└── black_box/</a></li>
+              <li>
+                <a href="/blog" class="text-green-400 hover:text-green-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-green-500/10">
+                  <span class="text-gray-500">└──</span> black_box/
+                </a>
+              </li>
             </ul>
           </div>
           
-          <div class="technical-border p-3 bg-white">
-            <div class="text-xs text-gray-500 mb-1">├── STATUS</div>
+          <div class="p-3 bg-black/40 rounded border border-gray-700 hover:border-yellow-500/50 transition-all duration-300">
+            <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+              STATUS
+            </div>
             <ul class="space-y-1 text-sm font-mono">
-              <li><a href="/status" class="text-blue-600 hover:text-blue-800 transition-colors">└── live_feed/</a></li>
+              <li>
+                <a href="/status" class="text-yellow-400 hover:text-yellow-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-yellow-500/10">
+                  <span class="text-gray-500">└──</span> live_feed/
+                </a>
+              </li>
             </ul>
           </div>
 
-          <div class="technical-border p-3 bg-white">
-            <div class="text-xs text-gray-500 mb-1">├── DOCS</div>
+          <div class="p-3 bg-black/40 rounded border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+            <div class="text-xs text-gray-500 mb-2 flex items-center gap-2">
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+              DOCS
+            </div>
             <ul class="space-y-1 text-sm font-mono">
-              <li><a href="/resume.pdf" class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank">└── resume_v1.pdf</a></li>
-              <li><a href="https://github.com/whybepb" class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank">└── github.profile</a></li>
-              <li><a href="mailto:whybepb@gmail.com" class="text-blue-600 hover:text-blue-800 transition-colors">└── contact.email</a></li>
+              <li>
+                <a href="/resume.pdf" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-blue-500/10" target="_blank">
+                  <span class="text-gray-500">└──</span> resume.pdf
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/whybepb" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-blue-500/10" target="_blank">
+                  <span class="text-gray-500">└──</span> github.profile
+                </a>
+              </li>
+              <li>
+                <a href="mailto:whybepb@gmail.com" class="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2 py-1 px-2 rounded hover:bg-blue-500/10">
+                  <span class="text-gray-500">└──</span> contact.email
+                </a>
+              </li>
             </ul>
           </div>
         </div>
         
         <!-- Terminal Interface -->
-        <div class="mt-8 terminal-window">
+        <div class="mt-6 terminal-window">
           <div class="terminal-header">
             <div class="terminal-buttons">
               <div class="terminal-button close"></div>
               <div class="terminal-button minimize"></div>
               <div class="terminal-button maximize"></div>
             </div>
-            <span class="ml-2 text-white">system.terminal</span>
+            <span class="ml-2 text-white text-xs">system.terminal</span>
           </div>
-          <div class="p-3 bg-black text-green-400 font-mono text-xs">
-            <div id="terminal-output" class="mb-2">
-              <div>$ system --status</div>
-              <div class="text-green-300">All systems operational</div>
-              <div>$ help</div>
+          <div class="p-3 bg-black text-green-400 font-mono text-xs max-h-48 overflow-y-auto">
+            <div id="terminal-output" class="mb-2 space-y-1">
+              <div class="text-cyan-400">$ system --status</div>
+              <div class="text-green-300">All systems operational ✓</div>
+              <div class="text-cyan-400">$ help</div>
               <div class="text-gray-400">Available commands:</div>
-              <div class="text-gray-400">  contact - Open contact info</div>
-              <div class="text-gray-400">  status  - System status</div>
-              <div class="text-gray-400">  clear   - Clear terminal</div>
+              <div class="text-gray-400 pl-2">contact - Open contact info</div>
+              <div class="text-gray-400 pl-2">status  - System status</div>
+              <div class="text-gray-400 pl-2">projects - View projects</div>
+              <div class="text-gray-400 pl-2">skills  - Show skills</div>
+              <div class="text-gray-400 pl-2">clear   - Clear terminal</div>
             </div>
-            <div class="flex">
-              <span class="text-blue-400">$</span>
+            <div class="flex items-center">
+              <span class="text-cyan-400">$</span>
               <input 
                 id="terminal-input" 
                 type="text" 
-                class="bg-transparent border-none outline-none text-green-400 ml-1 flex-1"
-                placeholder="Type 'help' for commands..."
+                class="bg-transparent border-none outline-none text-green-400 ml-1 flex-1 caret-green-400"
+                placeholder="Type command..."
+                autocomplete="off"
               />
             </div>
           </div>
         </div>
         
         <!-- System Info -->
-        <div class="mt-4 technical-border p-3 bg-gray-100">
-          <div class="text-xs text-gray-600 font-mono">
-            <div>LANG: JavaScript, Flutter, Express</div>
-            <div>MODE: Learning & Building</div>
-            <div class="status-flicker">STATUS: Job Seeking</div>
+        <div class="mt-4 p-3 bg-black/40 rounded border border-gray-700">
+          <div class="text-xs text-gray-400 font-mono space-y-1">
+            <div class="flex justify-between">
+              <span class="text-gray-500">LANG:</span>
+              <span class="text-cyan-400">JavaScript, Flutter, Express</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">MODE:</span>
+              <span class="text-purple-400">Learning & Building</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-500">STATUS:</span>
+              <span class="text-green-400 status-flicker">Actively Seeking</span>
+            </div>
           </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="mt-4 flex justify-center gap-4">
+          <a href="https://github.com/whybepb" target="_blank" class="p-2 rounded-full bg-gray-800 hover:bg-cyan-500/20 hover:border-cyan-500 border border-gray-700 transition-all duration-300 group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="mailto:whybepb@gmail.com" class="p-2 rounded-full bg-gray-800 hover:bg-purple-500/20 hover:border-purple-500 border border-gray-700 transition-all duration-300 group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="p-2 rounded-full bg-gray-800 hover:bg-blue-500/20 hover:border-blue-500 border border-gray-700 transition-all duration-300 group">
+            <svg class="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
         </div>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 technical-border p-2 bg-white">
-        <div class="text-xs font-mono">MENU.SYS</div>
+      <button id="mobile-menu-btn" class="md:hidden fixed top-4 left-4 z-50 p-3 bg-slate-900 border border-cyan-500/50 rounded-lg shadow-lg hover:border-cyan-400 transition-all duration-300">
+        <div class="text-xs font-mono text-cyan-400 flex items-center gap-2">
+          <span class="text-lg">≡</span>
+          <span>MENU</span>
+        </div>
       </button>
       
       <!-- Main Content Area -->
-      <main class="flex-1 md:ml-64 p-4 md:p-8">
+      <main class="flex-1 md:ml-72 p-4 md:p-8">
         <slot />
+        
+        <!-- Footer -->
+        <footer class="mt-12 pt-6 border-t border-gray-300">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-500">
+            <div>© 2024 Prathmesh Bhardwaj. <span class="text-cyan-600">All systems operational.</span></div>
+            <div class="flex items-center gap-4">
+              <a href="https://github.com/whybepb" target="_blank" class="link-glow">GitHub</a>
+              <span class="text-gray-300">|</span>
+              <a href="mailto:whybepb@gmail.com" class="link-glow">Email</a>
+              <span class="text-gray-300">|</span>
+              <a href="/resume.pdf" target="_blank" class="link-glow">Resume</a>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-overlay" class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <div id="mobile-overlay" class="md:hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-30 hidden"></div>
 
     <script>
-      // Terminal functionality
+      // Enhanced Terminal functionality
       const terminalInput = document.getElementById('terminal-input');
       const terminalOutput = document.getElementById('terminal-output');
       
@@ -137,29 +243,58 @@ const { title } = Astro.props;
           if (e.key === 'Enter') {
             const command = this.value.trim().toLowerCase();
             const outputDiv = document.createElement('div');
-            outputDiv.innerHTML = `<div class="text-blue-400">$ ${this.value}</div>`;
+            outputDiv.innerHTML = `<div class="text-cyan-400">$ ${this.value}</div>`;
             
             switch(command) {
               case 'help':
                 outputDiv.innerHTML += `
                   <div class="text-gray-400">Available commands:</div>
-                  <div class="text-gray-400">  contact - Open contact info</div>
-                  <div class="text-gray-400">  status  - System status</div>
-                  <div class="text-gray-400">  clear   - Clear terminal</div>
+                  <div class="text-gray-400 pl-2">contact  - Open contact info</div>
+                  <div class="text-gray-400 pl-2">status   - System status</div>
+                  <div class="text-gray-400 pl-2">projects - View projects</div>
+                  <div class="text-gray-400 pl-2">skills   - Show skills</div>
+                  <div class="text-gray-400 pl-2">about    - About me</div>
+                  <div class="text-gray-400 pl-2">clear    - Clear terminal</div>
                 `;
                 break;
               case 'contact':
                 outputDiv.innerHTML += `<div class="text-green-300">Opening contact interface...</div>`;
                 setTimeout(() => {
                   window.location.href = 'mailto:whybepb@gmail.com';
-                }, 1000);
+                }, 800);
                 break;
               case 'status':
                 outputDiv.innerHTML += `
-                  <div class="text-green-300">System Status: SEEKING OPPORTUNITIES</div>
-                  <div class="text-green-300">Location: Bangalore, India</div>
-                  <div class="text-green-300">Focus: Backend/Fullstack Development</div>
-                  <div class="text-green-300">Experience: Startup (Rbuy), Notification Systems</div>
+                  <div class="text-green-300">╔══════════════════════════════╗</div>
+                  <div class="text-green-300">║  STATUS: SEEKING OPPORTUNITIES</div>
+                  <div class="text-green-300">║  LOCATION: Bangalore, India</div>
+                  <div class="text-green-300">║  FOCUS: Backend/Fullstack</div>
+                  <div class="text-green-300">║  EXPERIENCE: Rbuy Startup</div>
+                  <div class="text-green-300">╚══════════════════════════════╝</div>
+                `;
+                break;
+              case 'projects':
+                outputDiv.innerHTML += `<div class="text-green-300">Navigating to projects...</div>`;
+                setTimeout(() => {
+                  window.location.href = '/projects';
+                }, 500);
+                break;
+              case 'skills':
+                outputDiv.innerHTML += `
+                  <div class="text-yellow-400">JavaScript ████████░░ 85%</div>
+                  <div class="text-blue-400">Flutter    ███████░░░ 78%</div>
+                  <div class="text-green-400">Backend    ████████░░ 82%</div>
+                  <div class="text-purple-400">Express.js ████████░░ 88%</div>
+                `;
+                break;
+              case 'about':
+                outputDiv.innerHTML += `
+                  <div class="text-cyan-300">┌──────────────────────────────┐</div>
+                  <div class="text-cyan-300">│  Prathmesh Bhardwaj          │</div>
+                  <div class="text-cyan-300">│  Backend/Fullstack Developer │</div>
+                  <div class="text-cyan-300">│  Student @ Bangalore, India  │</div>
+                  <div class="text-cyan-300">│  Building scalable systems   │</div>
+                  <div class="text-cyan-300">└──────────────────────────────┘</div>
                 `;
                 break;
               case 'clear':
@@ -167,11 +302,16 @@ const { title } = Astro.props;
                 this.value = '';
                 return;
               default:
-                outputDiv.innerHTML += `<div class="text-red-400">Command not found: ${command}</div>`;
+                if (command) {
+                  outputDiv.innerHTML += `<div class="text-red-400">Command not found: ${command}</div>`;
+                  outputDiv.innerHTML += `<div class="text-gray-500">Type 'help' for available commands</div>`;
+                }
             }
             
-            terminalOutput.appendChild(outputDiv);
-            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            if (command) {
+              terminalOutput.appendChild(outputDiv);
+              terminalOutput.scrollTop = terminalOutput.scrollHeight;
+            }
             this.value = '';
           }
         });

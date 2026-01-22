@@ -32,26 +32,24 @@ jobs:
         with:
           node-version: "18"
           cache: npm
+          cache-dependency-path: architectural-portfolio/package-lock.json
       
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       
       - name: Install dependencies
+        working-directory: ./architectural-portfolio
         run: npm ci
       
       - name: Build with Astro
-        run: |
-          npm run build
-        env:
-          # Tell Astro where the site will be deployed
-          ASTRO_SITE: ${{ steps.pages.outputs.origin }}
-          ASTRO_BASE: ${{ steps.pages.outputs.base_path }}
+        working-directory: ./architectural-portfolio
+        run: npm run build
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./architectural-portfolio/dist
 
   deploy:
     environment:
